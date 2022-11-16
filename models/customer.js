@@ -14,6 +14,7 @@ class Customer {
     this.lastName = lastName;
     this.phone = phone;
     this.notes = notes;
+    this.fullName = `${firstName} ${lastName}`
   }
 
   /** find all customers. */
@@ -62,6 +63,10 @@ class Customer {
     return await Reservation.getReservationsForCustomer(this.id);
   }
 
+  // async fullName(){
+  //    return `${this.firstName} ${this.lastName}`
+  // }
+
   /** save this customer. */
 
   async save() {
@@ -90,6 +95,7 @@ class Customer {
       );
     }
   }
+
 }
 
 module.exports = Customer;
